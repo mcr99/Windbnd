@@ -5,13 +5,13 @@
     <link rel="icon" href="./img/icons/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./src/style.css">
-    <script src="./src/main.js"></script>
+    <script src="./src/main.js" type="module"></script>
     <title>Windbnd</title>
   </head>
-  <body class="flex  flex-col"> <!--overflow-hidden when modal active-->
+  <body class="flex  flex-col">
     <header class="flex flex-col p-5 gap-5 sm:flex-row sm:justify-between">
       <img src="./img/icons/logo-f7862584.svg" alt="Windbnd logo" class="w-25 sm:w-30 lg:w-35">
-      <button class="flex border border-[#f5f5f5] text-[#cbcccb] rounded-xl justify-between shadow-md items-center mx-2 sm:w-[40%] md:w-[35%] lg:w-[30%] xl:w-[25%] 2xl:w-[20%]  hover:ring-2">
+      <button id="search_main" class="flex border border-[#f5f5f5] text-[#cbcccb] rounded-xl justify-between shadow-md items-center mx-2 sm:w-[40%] md:w-[35%] lg:w-[30%] xl:w-[25%] 2xl:w-[20%]  hover:ring-2 hover:cursor-pointer"> <!--Search button-->
         <p class="border-r border-r-[#ececec] py-3 w-[45%] hover:font-bold">Add Location</p>
         <p class="py-3 border-r border-r-[#ececec] w-[45%] hover:font-bold">Add guests</p>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-[#eb5757] w-[10%] p-1 hover:w-[12%]">
@@ -22,148 +22,27 @@
     <main class="px-5">
       <div class="flex justify-between py-5">
         <p class="font-bold text-[#333333] sm:text-lg lg:text-xl 2xl:text-2xl px-2">Stay in <span>Finland</span></p>
-        <p class="text-xs font-bold text-[#818181] md:text-sm lg:text-base"><span >12</span> stays</p>
+        <p class="text-xs font-bold text-[#818181] md:text-sm lg:text-base px-2"><span >12</span> stays</p>
       </div>
-      <section class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3">
-        <article class="hover:shadow-lg rounded-2xl p-2">
-
-          <div class="overflow-hidden rounded-2xl">
-            <img src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80" alt="photo" class="rounded-2xl object-cover transition-all duration-500 hover:scale-120">
-          </div>
-          
-          <div class="flex justify-between mt-3 items-center">
-            <p class="border rounded-xl font-bold p-1 text-xs text-[#3b3b3b] ">SUPERHOST</p>
-            <p class="text-[#818181] font-semibold text-sm mx-1 text-center">Entire apartment. 2 beds</p>
-            <div class="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-[#eb5757] fill-[#eb5757] ">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-              </svg>
-              <p class="text-[#3b3b3b] font-semibold text-sm">4.4</p>
-            </div>
-          </div>
-          <p class="font-bold text-[#333333] text-sm my-1">Stylist apartment in center of the city</p>
-        </article>
-        <!--############################################################-->
-        <article class="hover:shadow-lg rounded-2xl p-2">
-
-          <div class="overflow-hidden rounded-2xl">
-            <img src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80" alt="photo" class="rounded-2xl object-cover transition-all duration-500 hover:scale-120">
-          </div>
-          
-          <div class="flex justify-between mt-3 items-center">
-            <p class="border rounded-xl font-bold p-1 text-xs text-[#3b3b3b] ">SUPERHOST</p>
-            <p class="text-[#818181] font-semibold text-sm mx-1 text-center">Entire apartment. 2 beds</p>
-            <div class="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-[#eb5757] fill-[#eb5757] ">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-              </svg>
-              <p class="text-[#3b3b3b] font-semibold text-sm">4.4</p>
-            </div>
-          </div>
-          <p class="font-bold text-[#333333] text-sm my-1">Stylist apartment in center of the city</p>
-        </article><article class="hover:shadow-lg rounded-2xl p-2">
-
-          <div class="overflow-hidden rounded-2xl">
-            <img src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80" alt="photo" class="rounded-2xl object-cover transition-all duration-500 hover:scale-120">
-          </div>
-          
-          <div class="flex justify-between mt-3 items-center">
-            <p class="border rounded-xl font-bold p-1 text-xs text-[#3b3b3b] ">SUPERHOST</p>
-            <p class="text-[#818181] font-semibold text-sm mx-1 text-center">Entire apartment. 2 beds</p>
-            <div class="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-[#eb5757] fill-[#eb5757] ">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-              </svg>
-              <p class="text-[#3b3b3b] font-semibold text-sm">4.4</p>
-            </div>
-          </div>
-          <p class="font-bold text-[#333333] text-sm my-1">Stylist apartment in center of the city</p>
-        </article><article class="hover:shadow-lg rounded-2xl p-2">
-
-          <div class="overflow-hidden rounded-2xl">
-            <img src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80" alt="photo" class="rounded-2xl object-cover transition-all duration-500 hover:scale-120">
-          </div>
-          
-          <div class="flex justify-between mt-3 items-center">
-            <p class="border rounded-xl font-bold p-1 text-xs text-[#3b3b3b] ">SUPERHOST</p>
-            <p class="text-[#818181] font-semibold text-sm mx-1 text-center">Entire apartment. 2 beds</p>
-            <div class="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-[#eb5757] fill-[#eb5757] ">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-              </svg>
-              <p class="text-[#3b3b3b] font-semibold text-sm">4.4</p>
-            </div>
-          </div>
-          <p class="font-bold text-[#333333] text-sm my-1">Stylist apartment in center of the city</p>
-        </article><article class="hover:shadow-lg rounded-2xl p-2">
-
-          <div class="overflow-hidden rounded-2xl">
-            <img src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80" alt="photo" class="rounded-2xl object-cover transition-all duration-500 hover:scale-120">
-          </div>
-          
-          <div class="flex justify-between mt-3 items-center">
-            <p class="border rounded-xl font-bold p-1 text-xs text-[#3b3b3b] ">SUPERHOST</p>
-            <p class="text-[#818181] font-semibold text-sm mx-1 text-center">Entire apartment. 2 beds</p>
-            <div class="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-[#eb5757] fill-[#eb5757] ">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-              </svg>
-              <p class="text-[#3b3b3b] font-semibold text-sm">4.4</p>
-            </div>
-          </div>
-          <p class="font-bold text-[#333333] text-sm my-1">Stylist apartment in center of the city</p>
-        </article><article class="hover:shadow-lg rounded-2xl p-2">
-
-          <div class="overflow-hidden rounded-2xl">
-            <img src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80" alt="photo" class="rounded-2xl object-cover transition-all duration-500 hover:scale-120">
-          </div>
-          
-          <div class="flex justify-between mt-3 items-center">
-            <p class="border rounded-xl font-bold p-1 text-xs text-[#3b3b3b] ">SUPERHOST</p>
-            <p class="text-[#818181] font-semibold text-sm mx-1 text-center">Entire apartment. 2 beds</p>
-            <div class="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-[#eb5757] fill-[#eb5757] ">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-              </svg>
-              <p class="text-[#3b3b3b] font-semibold text-sm">4.4</p>
-            </div>
-          </div>
-          <p class="font-bold text-[#333333] text-sm my-1">Stylist apartment in center of the city</p>
-        </article><article class="hover:shadow-lg rounded-2xl p-2">
-
-          <div class="overflow-hidden rounded-2xl">
-            <img src="https://images.unsplash.com/photo-1505873242700-f289a29e1e0f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2255&q=80" alt="photo" class="rounded-2xl object-cover transition-all duration-500 hover:scale-120">
-          </div>
-          
-          <div class="flex justify-between mt-3 items-center">
-            <p class="border rounded-xl font-bold p-1 text-xs text-[#3b3b3b] ">SUPERHOST</p>
-            <p class="text-[#818181] font-semibold text-sm mx-1 text-center">Entire apartment. 2 beds</p>
-            <div class="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 text-[#eb5757] fill-[#eb5757] ">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 0 1 1.04 0l2.125 5.111a.563.563 0 0 0 .475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 0 0-.182.557l1.285 5.385a.562.562 0 0 1-.84.61l-4.725-2.885a.562.562 0 0 0-.586 0L6.982 20.54a.562.562 0 0 1-.84-.61l1.285-5.386a.562.562 0 0 0-.182-.557l-4.204-3.602a.562.562 0 0 1 .321-.988l5.518-.442a.563.563 0 0 0 .475-.345L11.48 3.5Z" />
-              </svg>
-              <p class="text-[#3b3b3b] font-semibold text-sm">4.4</p>
-            </div>
-          </div>
-          <p class="font-bold text-[#333333] text-sm my-1">Stylist apartment in center of the city</p>
-        </article>
+      <section id="cards_section" class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-3">
+        
       </section>
     </main>
     <!--############################################################-->
-    <div class="absolute w-screen h-screen bg-black/50 hidden">
-      <section class=" w-screen p-5 bg-white">
+    <div id="modal_search" class="absolute w-screen h-screen bg-black/50 hidden">
+      <section id="modal_search__form" class=" w-screen p-5 bg-white">
         <div class="flex justify-between text-sm mb-5 sm:hidden">
           <p class="font-bold text-[#333333]">Edit you search</p>
-          <p class="font-bold text-[#333333]">X</p>
+          <button id="close_button__modal" class="font-bold text-[#333333] hover:text-base hover:cursor-pointer">X</button>
         </div>
 
         <div class="rounded-2xl flex flex-col items-center sm:flex-row sm:items-start">
 
           <div class="w-full">
-            <div class="shadow-[0px_-1px_3px_-1px_rgba(0,0,0,0.3)] px-2 py-1 rounded-t-2xl border-b border-[#ececec] sm:rounded-l-2xl sm:rounded-r-none sm:shadow-[0px_0px_3px_-1px_rgba(0,0,0,0.3)] sm:border-b-none">
+            <label class="block shadow-[0px_-1px_3px_-1px_rgba(0,0,0,0.3)] px-2 py-1 rounded-t-2xl border-b border-[#ececec] sm:rounded-l-2xl sm:rounded-r-none sm:shadow-[0px_0px_3px_-1px_rgba(0,0,0,0.3)] sm:border-b-none hover:ring-1 focus-within:ring-1">
               <p class="text-xs text-[#333333] font-bold">LOCATION</p>
               <input type="text" class="focus:outline-none ">
-            </div>
+            </label> 
             <div class="my-3">
               <div class="flex items-center gap-2 pl-2">
                 <img src="img/icons/location.png" alt="Location logo" class="w-4 h-4">
@@ -181,7 +60,7 @@
           </div>
 
           <div class="w-full">
-            <div class="shadow-[0px_1px_3px_-1px_rgba(0,0,0,0.3)] rounded-b-2xl px-2 py-1 sm:rounded-l-none sm:rounded-r-2xl sm:shadow-[0px_0px_3px_-1px_rgba(0,0,0,0.3)] ">
+            <div class="shadow-[0px_1px_3px_-1px_rgba(0,0,0,0.3)] rounded-b-2xl px-2 py-1 sm:rounded-l-none sm:rounded-r-2xl sm:shadow-[0px_0px_3px_-1px_rgba(0,0,0,0.3)] hover:border">
               <p class="text-xs text-[#333333] font-bold">GUESTS</p>
               <p>5 guests</p>
             </div>
@@ -190,23 +69,23 @@
                   <p class="font-bold text-sm text-[#333333]">Adults</p>
                   <p class="text-xs text-[#8b8b8b]">Ages 13 or Above</p>
                   <div class="flex mb-5 py-3">
-                    <button class="border-2 w-6 rounded-md bg-[#f0f0f0] border-[#939393] text-[#939393] font-bold">-</button>
+                    <button class="border-2 w-6 rounded-md bg-[#f0f0f0] border-[#939393] text-[#939393] font-bold hover:border-[#93939344] active:bg-[#939393] active:text-[#f0f0f0]">-</button>
                     <p class="mx-8 font-bold text-[#333333]">4</p>
-                    <button class="border-2 w-6 rounded-md bg-[#f0f0f0] border-[#939393] text-[#939393] font-bold">+</button>
+                    <button class="border-2 w-6 rounded-md bg-[#f0f0f0] border-[#939393] text-[#939393] font-bold hover:border-[#93939344] active:bg-[#939393] active:text-[#f0f0f0]">+</button>
                   </div>
               </div>
               <div>
                   <p class="font-bold text-sm text-[#333333]">Children</p>
                   <p class="text-xs text-[#8b8b8b]">Under 13<p>
                     <div class="flex py-3">
-                      <button class="border-2 w-6 rounded-md bg-[#f0f0f0] border-[#939393] text-[#939393] font-bold">-</button>
+                      <button class="border-2 w-6 rounded-md bg-[#f0f0f0] border-[#939393] text-[#939393] font-bold hover:border-[#93939344] active:bg-[#939393] active:text-[#f0f0f0]">-</button>
                       <p class="mx-8 font-bold text-[#333333]">1</p>
-                      <button class="border-2 w-6 rounded-md bg-[#f0f0f0] border-[#939393] text-[#939393] font-bold">+</button>
+                      <button class="border-2 w-6 rounded-md bg-[#f0f0f0] border-[#939393] text-[#939393] font-bold hover:border-[#93939344] active:bg-[#939393] active:text-[#f0f0f0]">+</button>
                     </div>
                   </div>
               </div>
             </div>
-            <button class="flex bg-[#eb5757] px-3 py-1 w-25 rounded-xl text-white my-5 sm:my-2 sm:mx-[5%]">
+            <button id="button_search_modal" class="flex bg-[#eb5757] px-3 py-1 w-25 rounded-xl text-white my-5 sm:my-2 sm:mx-[5%] hover:font-bold active:bg-[#eb5757cc] active:text-white hover:cursor-pointer">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
               </svg>
