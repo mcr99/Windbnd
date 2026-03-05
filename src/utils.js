@@ -3,6 +3,9 @@
  * Este archivo contiene funciones auxiliares que serán utilizadas y llamadas
  * desde el archivo principal para realizar varias operaciones.
  */
+import {stays} from "./stays"
+
+let staysList = [...stays]
 
 // To open and close modal window
 export let modalSearch = document.querySelector("#modal_search");
@@ -52,3 +55,67 @@ export function createCard(element) {
     cardsSection.innerHTML += card
 }
 
+// Add sugestion for locations
+
+export function getLocation(result, originalResult){
+    let found = staysList.filter(object => {
+        return object.city.toLocaleLowerCase().includes(result) 
+    })
+    let cities = found.filter((item, index, self) => {
+        return index === self.findIndex(t => t.city === item.city)
+    })
+
+    showResults(cities, originalResult)
+}
+
+export let locationContainer = document.querySelector("#location_container")
+
+function showResults(elements, originalResult) {
+    let addLocationButton = document.querySelector("#add_location__button")
+    addLocationButton.textContent = originalResult
+
+    locationContainer.innerHTML = ``
+
+    elements.forEach(element => {
+        locationContainer.innerHTML += `
+    <div class="flex items-center gap-2 pl-2 cursor-pointer, hover:bg-[#f5f5f5] active:bg-[#e6e6e6] rounded-2xl location_option" data-city="${element.city}">
+        <img src="img/icons/location.png" alt="Location logo" class="w-4 h-4">
+        <p>${element.city}, ${element.country}</p>
+    </div>
+    `
+    })
+}
+
+//Add number of guests
+
+export function selectguests(adult, children){
+    let guestAdult = document.querySelector("#guest_adult")
+    let guestChildren = document.querySelector("#guest_children")
+    let guestsSum = document.querySelector("#guests_sum")
+    let addGuestButton = document.querySelector("#add_guest__button")
+
+    guestAdult.textContent = adult
+    guestChildren.textContent =  children
+    let sum = adult + children
+    guestsSum.innerHTML = sum
+    addGuestButton.textContent = `${sum} guests`
+}
+
+
+// to filter the stays based on data entered 
+
+export let staysAmount = document.querySelector("#stays_amount")
+
+export function filterStays(city, total) {
+    cardsSection.innerHTML = ``
+    let filtered = staysList.filter(stay => {
+        let matchCity = stay.city.toLowerCase().includes(city.toLowerCase())
+        let matchGuests = stay.maxGuests >= total
+        return matchCity && matchGuests
+    })
+
+    filtered.forEach(element=> {
+        createCard(element)
+    })
+    staysAmount.textContent = filtered.length 
+}
