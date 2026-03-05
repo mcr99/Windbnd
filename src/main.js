@@ -5,7 +5,7 @@
  */
 
 // Import functions from  utils.js 
-import { activeToggleModal, modalSearch, createCard, getLocation, selectguests, filterStays, locationContainer} from "./utils"
+import { activeToggleModal, modalSearch, createCard, getLocation, selectguests, filterStays, locationContainer, activeDataLocationArea} from "./utils"
 
 // Import array from stays.js
 import {stays} from "./stays"
@@ -113,4 +113,15 @@ locationContainer.addEventListener("click", (e) => {
     }
     
 })
+
+
+// Adding option to hide the option 
+
+let guestOption = document.querySelector("#guest_option")
+
+guestOption.addEventListener("click", ()=> {
+    activeDataLocationArea()
+})
+
+
 

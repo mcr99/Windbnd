@@ -10,11 +10,11 @@
   </head>
   <body class="flex  flex-col">
     <header class="flex flex-col p-5 gap-5 sm:flex-row sm:justify-between">
-      <img src="./img/icons/logo-f7862584.svg" alt="Windbnd logo" class="w-25 sm:w-30 lg:w-35">
+      <img src="./img/icons/logo-f7862584.svg" alt="Windbnd logo" class="w-25 sm:w-30 lg:w-35" loading="lazy">
       <button id="search_main" class="flex border border-[#f5f5f5] text-[#cbcccb] rounded-xl justify-between shadow-md items-center mx-2 sm:w-[40%] md:w-[35%] lg:w-[30%] xl:w-[25%] 2xl:w-[20%]  hover:ring-2 hover:cursor-pointer">
         <p id="add_location__button" class="border-r border-r-[#ececec] py-3 w-[45%] hover:font-bold">Add Location</p>
         <p id="add_guest__button" class="py-3 border-r border-r-[#ececec] w-[45%] hover:font-bold">Add guests</p>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-[#eb5757] w-[10%] p-1 hover:w-[12%]">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-[#eb5757] w-[10%] p-1 hover:w-[12%]" loading="lazy">
           <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/>
         </svg>
       </button>
@@ -29,7 +29,7 @@
       </section>
     </main>
 
-    <div id="modal_search" class="absolute w-screen h-screen bg-black/50 hidden">
+    <div id="modal_search" class="absolute w-screen h-[101vh] bg-black/50 hidden">
       <section id="modal_search__form" class=" w-screen p-5 bg-white">
         <div class="flex justify-between text-sm mb-5 sm:hidden">
           <p class="font-bold text-[#333333]">Edit you search</p>
@@ -38,22 +38,24 @@
 
         <div class="rounded-2xl flex flex-col items-center sm:flex-row sm:items-start">
 
-          <div class="w-full">
-            <label class="block shadow-[0px_-1px_3px_-1px_rgba(0,0,0,0.3)] px-2 py-1 rounded-t-2xl border-b border-[#ececec] sm:rounded-l-2xl sm:rounded-r-none sm:shadow-[0px_0px_3px_-1px_rgba(0,0,0,0.3)] sm:border-b-none hover:ring-1 focus-within:ring-1">
+          <div class="w-full md:ml-[5%] lg:ml-[10%] xl:ml-[15%] 2xl:ml-[20%]"><!--margen-->
+            <label class="block shadow-[0px_-1px_3px_-1px_rgba(0,0,0,0.3)] px-2 py-1 rounded-t-2xl border-b border-[#ececec] sm:rounded-l-2xl sm:rounded-r-none sm:shadow-[0px_0px_3px_-1px_rgba(0,0,0,0.3)] sm:border-b-none hover:rounded-2xl hover:ring-1 focus-within:ring-1 focus-within:rounded-2xl">
               <p class="text-xs text-[#333333] font-bold">LOCATION</p>
               <input id="input_location" type="text" class="focus:outline-none ">
             </label>
-            <div id="location_container" class="my-3">
+            <div id="location_container" class="sm:my-3 sm:mb-60">
               
             </div>
           </div>
 
           <div class="w-full">
-            <div class="shadow-[0px_1px_3px_-1px_rgba(0,0,0,0.3)] rounded-b-2xl px-2 py-1 sm:rounded-l-none sm:rounded-r-2xl sm:shadow-[0px_0px_3px_-1px_rgba(0,0,0,0.3)] hover:border">
+            
+            <div id="guest_option" class="shadow-[0px_1px_3px_-1px_rgba(0,0,0,0.3)] rounded-b-2xl px-2 py-1 sm:rounded-none  sm:shadow-[0px_0px_3px_-1px_rgba(0,0,0,0.3)] hover:border hover:rounded-2xl focus-within:ring-1 focus-within:rounded-2xl">
               <p class="text-xs text-[#333333] font-bold">GUESTS</p>
               <p><span id="guests_sum">0</span> guests</p>
             </div>
-            <div class="py-5 px-3">
+            <div id="guest_option__change" class="py-5 px-3 hidden">
+              
               <div>
                   <p class="font-bold text-sm text-[#333333]">Adults</p>
                   <p class="text-xs text-[#8b8b8b]">Ages 13 or Above</p>
@@ -74,19 +76,20 @@
                   </div>
               </div>
             </div>
-            <button id="button_search_modal" class="flex bg-[#eb5757] px-3 py-1 w-25 rounded-xl text-white my-5 sm:my-2 sm:mx-[5%] hover:font-bold active:bg-[#eb5757cc] active:text-white hover:cursor-pointer">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-4">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-              </svg>
-              <p class="mx-1">Search</p>
-            </button>
+            <div class="sm:block px-10 sm:shadow-[0px_0px_3px_-1px_rgba(0,0,0,0.3)] rounded-r-2xl md:mr-[5%] lg:mr-[10%] xl:mr-[15%] 2xl:mr-[20%]"><!--marge-->
+              <button id="button_search_modal" class="flex bg-[#eb5757] px-3 py-1 w-25 rounded-xl text-white my-5 sm:my-2 sm:mx-[5%] hover:font-bold active:bg-[#eb5757cc] active:text-white hover:cursor-pointer">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 w-4" loading="lazy">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                </svg>
+                <p class="mx-1">Search</p>
+              </button>
+            </div>
           </div>
 
         </div>
       </section>
     </div>
-    <footer class="p-5">
-      <p class="text-center"> Copyright ©2026 </p>
+    <footer class="p-10">
     </footer>
   </body>
 </html>
