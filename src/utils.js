@@ -78,8 +78,8 @@ function showResults(elements, originalResult) {
 
     elements.forEach(element => {
         locationContainer.innerHTML += `
-    <div class="flex items-center gap-2 pl-2 cursor-pointer, hover:bg-[#f5f5f5] active:bg-[#e6e6e6] rounded-2xl location_option" data-city="${element.city}">
-        <img src="/img/icons/location.png" alt="Location logo" class="w-4 h-4">
+    <div class="flex items-center gap-2 pl-2 cursor-pointer hover:bg-[#f5f5f5] active:bg-[#e6e6e6] rounded-2xl location_option" data-city="${element.city}">
+        <img src="img/icons/location.png" alt="Location logo" class="w-4 h-4">
         <p>${element.city}, ${element.country}</p>
     </div>
     `
