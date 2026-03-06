@@ -3,14 +3,18 @@
  * Este archivo contiene funciones auxiliares que serán utilizadas y llamadas
  * desde el archivo principal para realizar varias operaciones.
  */
+
+// Import stays from stays
 import {stays} from "./stays"
 
+// create a copy
 let staysList = [...stays]
 
 // To open and close modal window
 export let modalSearch = document.querySelector("#modal_search");
 let body = document.querySelector("body");
 
+//To add and remove classes 
 export function activeToggleModal() {
     modalSearch.classList.toggle("hidden");
     body.classList.toggle("overflow-hidden");
@@ -61,19 +65,22 @@ export function createCard(element) {
     cardsSection.innerHTML += card
 }
 
-// Add sugestion for locations
+
+// to add sugestion for locations
 
 export function getLocation(result, originalResult){
     let found = staysList.filter(object => {
-        return object.city.toLocaleLowerCase().includes(result) 
+        return object.city.toLowerCase().includes(result) 
     })
     let cities = found.filter((item, index, self) => {
-        return index === self.findIndex(t => t.city === item.city)
+        return index === self.findIndex(element => element.city === item.city)
     })
 
     showResults(cities, originalResult)
 }
 
+
+// create the element that has the result based on what it entered and add the result to the add location part(button)
 export let locationContainer = document.querySelector("#location_container")
 
 function showResults(elements, originalResult) {
@@ -92,7 +99,7 @@ function showResults(elements, originalResult) {
     })
 }
 
-//Add number of guests
+//Add number of guest in the pop up part and the button part 
 
 export function selectguests(adult, children){
     let guestAdult = document.querySelector("#guest_adult")
@@ -108,7 +115,7 @@ export function selectguests(adult, children){
 }
 
 
-// to filter the stays based on data entered 
+// to filter the stays based on data entered in real time for location and guest amount
 
 export let staysAmount = document.querySelector("#stays_amount")
 

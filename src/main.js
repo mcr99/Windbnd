@@ -11,12 +11,13 @@ import { activeToggleModal, modalSearch, createCard, getLocation, selectguests, 
 import {stays} from "./stays"
 
 
-// open and close toggle 
+// open and close toggle with difetent options
 let searchMain = document.querySelector("#search_main")
 
 searchMain.addEventListener("click", () => {
     activeToggleModal()
 })
+
 
 let closeButtonModal = document.querySelector("#close_button__modal")
 
@@ -24,9 +25,11 @@ closeButtonModal.addEventListener("click", () => {
     activeToggleModal()
 })
 
+
 modalSearch.addEventListener("click", () => {
     activeToggleModal()
 })
+
 
 let modalSearchForm = document.querySelector("#modal_search__form")
 
@@ -34,17 +37,21 @@ modalSearchForm.addEventListener("click", (e) => {
     e.stopPropagation()
 })
 
+
 let buttonSearchModal = document.querySelector("#button_search_modal")
 
 buttonSearchModal.addEventListener("click", () => {
     activeToggleModal()
 })
 
+
+// Getting all cards when you just get on the page 
 stays.forEach(element => {
     createCard(element)
 });
 
-//location
+
+//add event listener to active the filters when changing location
 
 let inputLocation = document.querySelector("#input_location")
 
@@ -55,7 +62,7 @@ inputLocation.addEventListener("input", (e) => {
     filterStays(result2, counterAdult + counterChildren)
 })
 
-// guests
+// change amount of guest needed and filter updated 
 
 
 let lessAdult = document.querySelector("#less_adult")
@@ -96,7 +103,7 @@ moreChildren.addEventListener("click", ()=> {
 })
 
 
-// click location
+// add event listneer to filter when a location sugestion is clicked and update info in the input and button
 
 locationContainer.addEventListener("click", (e) => {
     let item = e.target.closest(".location_option")
@@ -115,7 +122,7 @@ locationContainer.addEventListener("click", (e) => {
 })
 
 
-// Adding option to hide the option 
+// Adding option to hide the guest options 
 
 let guestOption = document.querySelector("#guest_option")
 
